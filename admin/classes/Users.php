@@ -1,5 +1,5 @@
 <?php
-    require("config/Config.php");
+    // include_once("config/Config.php");
     // session_start();
     class Users extends Config{
         

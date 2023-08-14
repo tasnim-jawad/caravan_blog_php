@@ -1,4 +1,5 @@
 <?php
+    include_once("config/Config.php");
     include_once("./classes/Users.php");
     $user = new Users();
     
@@ -31,12 +32,10 @@
         <div id="layoutSidenav">
 
             <!-- sidenav included  -->
-            <?php include_once("./includes/sidenav.php") ?>
-
+            <?php include_once("includes/sidenav.php")?>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        
                     <!-- loading category page view -->
                         <?php
                             if(isset($_SESSION["master"])){
@@ -50,11 +49,13 @@
                                     require("./views/add_post_view.php");
                                 }elseif($view == "manage_post"){
                                     require("./views/manage_post_view.php");
+                                }elseif($view == "update_category"){
+                                    require("./views/update_cat_view.php");
+                                }elseif($view == "update_post"){
+                                    require("./views/update_post_view.php");
                                 }
                             }
-                            
                         ?>
-                        
                     </div>
                 </main>
                 <!-- footer included  -->

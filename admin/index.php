@@ -1,6 +1,7 @@
 <?php
     session_start();
-    include "./classes/Users.php";
+    include_once "config/Config.php";
+    include_once "./classes/Users.php";
     $userMethods = new Users();
 
     if(isset($_POST["admin_Login"])){

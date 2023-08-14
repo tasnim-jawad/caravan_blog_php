@@ -1,6 +1,14 @@
 <?php
+    include_once "classes/Manages.php";
+
+    $category_list =new Manages();
+    
     $titlePage = "Manage category";
     $subTitlePage ="All category list ";
+    if(isset($_GET['id'])){
+
+        $category_list->delete_category($_GET['id']);
+    }
 
 ?>
     <h1 class="mt-4"><?= $titlePage; ?></h1>
@@ -33,12 +41,27 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                    </tr>
+                    <?php 
+                        $i=1 ;
+                        $category_seen = $category_list->show_categories();
+                        if (mysqli_num_rows($category_seen) > 0) {
+
+                            foreach($category_seen as $category){ ?>
+                                <tr>
+                                    <td><?= $i++ ?></td>
+                                    <td><?= $category['category_name'] ?></td>
+                                    <td><?= $category['category_description'] ?></td>
+                                    <td class="text-center" >
+                                        <div class="action_container text-center">
+                                            <a class="btn btn-secondary btn-sm mx-1" href="update_category.php?id=<?= $category['id'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <a class="btn btn-danger btn-sm mx-1" href="manage_category.php?id=<?= $category['id'] ?>"><i class="fa-solid fa-trash"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                        }
+                    ?>
                 </tbody>
             </table>
         </div>

@@ -1,14 +1,18 @@
+<?php include_once "admin/config/Config.php"?>
+<?php include_once "admin/classes/Posts.php"?>
+<?php include_once "admin/classes/Categories.php"?>
+<?php include_once "admin/classes/Manages.php"?>
 
- <!-- ******* head tag ********** -->
-<?php include "includes/header.php"; ?>
+<!-- ******* head tag ********** -->
+<?php include_once "includes/header.php"; ?>
 <!-- ******* preloader ********** -->
-<?php include "includes/preloader.php"; ?>
+<?php include_once "includes/preloader.php"; ?>
 <!-- ******* navbar ********** -->
-<?php include "includes/navbar.php"; ?>
+<?php include_once "includes/navbar.php"; ?>
 <!-- ******* banner ********** -->
-<?php include "includes/banner.php"; ?>
+<?php include_once "includes/banner.php"; ?>
 <!-- ******* call_to_action ********** -->
-<?php include "includes/call_to_action.php"; ?>
+<?php include_once "includes/call_to_action.php"; ?>
  
 
   <!-- Page Content -->
@@ -16,19 +20,19 @@
     <div class="container">
         <div class="row">
           <!-- ******* all_blog_post ********** -->
-          <?php include "includes/all_blog_post.php"; ?>
+          <?php include_once "includes/all_blog_post.php"; ?>
           <!-- ******* sidebar ********** -->
-          <?php include "includes/sidebar.php"; ?>
+          <?php include_once "includes/sidebar.php"; ?>
             
         </div>
     </div>
   </section>
     
   <!-- ******* footer ********** -->
-  <?php include "includes/footer.php"; ?>
+  <?php include_once "includes/footer.php"; ?>
   
   <!-- ******* script_link ********** -->
-  <?php include "includes/script_link.php"; ?>
+  <?php include_once "includes/script_link.php"; ?>
 
 
     
